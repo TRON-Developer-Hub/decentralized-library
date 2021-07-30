@@ -16,8 +16,7 @@ npm install
 ```
 cd dapp-ui
 npm install
-npm run build
-npm run start
+npm run dev
 ```
 
 4. Navigate to http://localhost:3000/ to see the app running.
