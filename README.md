@@ -7,7 +7,7 @@ npm install
 ```
 
 2. Follow along the instructions to complete the code.
-- Follow [instructions](./Instructions.md) to complete the smart contract code.
+- Follow [instructions](./instructions.md) to complete the smart contract code.
 - Follow [setup](./setup.md) to setup all requirements.
 - Follow [dapps](./dapps.md) to complete the DApp code.
 
