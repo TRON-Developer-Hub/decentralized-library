@@ -3,10 +3,9 @@ const port = process.env.HOST_PORT || 9090
 module.exports = {
   networks: {
     mainnet: {
-      // Don't put your private key here:
-      privateKey: process.env.PRIVATE_KEY_MAINNET,
+      privateKey: 'da146374a75310b9666e834ee4ad0866d6f4035967bfc76217c5a495fff9f0d0',
       /*
-Create a .env file (it must be gitignored) containing something like
+A better way is to create a .env file (it must be gitignored) containing something like
 
   export PRIVATE_KEY_MAINNET=4E7FECCB71207B867C495B51A9758B104B1D4422088A87F4978BE64636656243
 
@@ -21,14 +20,14 @@ Then, run the migration with:
       network_id: '1'
     },
     shasta: {
-      privateKey: process.env.PRIVATE_KEY_SHASTA,
+      privateKey: 'da146374a75310b9666e834ee4ad0866d6f4035967bfc76217c5a495fff9f0d0',
       userFeePercentage: 50,
       feeLimit: 1e8,
       fullHost: 'https://api.shasta.trongrid.io',
       network_id: '2'
     },
     nile: {
-      privateKey: process.env.PRIVATE_KEY_NILE,
+      privateKey: 'da146374a75310b9666e834ee4ad0866d6f4035967bfc76217c5a495fff9f0d0',
       userFeePercentage: 100,
       feeLimit: 1e8,
       fullHost: 'https://api.nileex.io',
@@ -44,7 +43,7 @@ Then, run the migration with:
     },
     compilers: {
       solc: {
-        version: '0.5.4'
+        version: '0.8.0'
       }
     }
   }
