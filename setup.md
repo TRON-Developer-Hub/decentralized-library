@@ -35,27 +35,22 @@ We will use existing solidity contracts developed in previous session, and then 
 
 Clone the template into your folder:
 ```
-git clone https://github.com/vivian-kang/decentralized-library
+git clone https://github.com/TRON-Developer-Hub/decentralized-library
 
 cd decentralized-library
 
 npm install
 
-## Deploy contract using TRONIDE
-
-- Open [Tron IDE](http://www.tronide.io/)
-
-- Enable `Solidity Compiler` and `DEPLOYMENT` on tronIDE
-
-- Create new file [Library.sol](./contracts/Library.sol) from plus icon on left panel
-
-- Select appropriate network on tronlink, as we are going to deploy contract on nile testnet, so we will select `Tron Nile`
-
-- Select appropriate compiler on tron IDE, in this example we are going to use `0.8.0` above compiler
-
-- Go to DEPLOYMENT and click deploy.
-
-- On sucessfull deploy copy `contract address`
+## Deploy contract using TronBox
+Compile contract:
+```
+tronbox compile
+```
+Deploy contract:
+```
+tronbox migrate --reset --network nile
+```
+On sucessfull deploy, copy the `contract address`
 
 
 [NEXT - Complete DApps UI ](./dapps.md)
