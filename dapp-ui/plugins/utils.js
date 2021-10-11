@@ -4,16 +4,47 @@ let account = null
 let libraryContract
 let libraryContractAddress = 'TD7g2t959bRjm5DFsAHYTwFrhrNLXU3gJ9' // Paste Contract address here
 let bookRentContract = null
+let tronwebObj =null
 
 
 export const accountAddress = () => {
   return account
 }
 
+export async function getTronWeb(){
+  // Obtain the tronLink object injected by tronLink 
+  if (window.tronLink) {
+    await handleTronLink();
+ } else {
+   window.addEventListener('tronLink#initialized', handleTronLink, {
+     once: true,
+   });
+ 
+   // If the event is not dispatched by the end of the timeout,
+   // the user probably doesn't have TronLink installed.
+   setTimeout(handleTronLink, 3000); // 3 seconds
+}
+
+}
+async function handleTronLink() {
+  var tronLink = window.tronLink;
+  if (tronLink) {
+    console.log('tronLink successfully detected!');
+    // after obtained the tronlink object, request to connect with tronLink
+    var res =  await tronLink.request({method: 'tron_requestAccounts'})
+    
+    tronwebObj = tronLink.tronWeb;
+    
+  } else {
+    console.log('Please install TronLink-Extension!');
+    }
+ }  
 
 export async function setLibraryContract() {
   // TODO: abtain contract Object
-  bookRentContract = await window.tronWeb.contract().at(libraryContractAddress);
+
+  bookRentContract = await tronwebObj.contract().at(libraryContractAddress);
+
 }
 
 
@@ -55,7 +86,7 @@ export async function fetchAllBooks() {
     if(book.name!="") // filter the deleted books
     {
       books.push(
-        {id: i,name: book.name,description: book.description,price: tronWeb.fromSun(book.price)}
+        {id: i,name: book.name,description: book.description,price: tronwebObj.fromSun(book.price)}
       )
     }
     
