@@ -22,7 +22,7 @@ export default {
   },
   async mounted() {
     // get tronWeb object 
-    await getTronWeb();
+    getTronWeb();
     // init contract object
     await setLibraryContract();
     // fetch all books
