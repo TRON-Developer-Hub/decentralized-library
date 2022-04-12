@@ -23,11 +23,19 @@ export default {
   async mounted() {
     // get tronWeb object 
     getTronWeb();
-    // init contract object
-    await setLibraryContract();
-    // fetch all books
-    const books = await fetchAllBooks();
-    this.posts = books;
+    
+    // Wait a while to ensure tronweb object has already injected
+    setTimeout(async ()=>{
+        // init contract object
+        await setLibraryContract();
+        
+        console.log("Begin to obtain the books information");
+        // fetch all books
+        const books = await fetchAllBooks();
+        this.posts = books;
+        console.log("The total number of Books: "+ books.length);
+        
+    },50);
 
   },
   data() {
