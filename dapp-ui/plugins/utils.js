@@ -18,7 +18,6 @@ export function getTronWeb(){
         console.log("tronWeb successfully detected!")
     }
   }, 10)
-  setTimeout('',3000);
 }
  
 
