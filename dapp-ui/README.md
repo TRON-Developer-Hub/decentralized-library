@@ -1,22 +1,9 @@
-# dapp-ui
+### Tron Poem Smart Contract
 
-> Nuxt.js project
+Simple test project in the Tron Nile Testnet:
+Smart contract address TLCZXCdG5BEDSc8JCNS7ffm2HdEXFsZA7r
+Anyone can adding new words in Tron Poem when humanity exist.
 
-## Build Setup
+### Tron Poem Frontend
 
-``` bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+React Typescript simple frontend for a smart contract iterations
